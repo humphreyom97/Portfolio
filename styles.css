@@ -1,0 +1,305 @@
+/* styles.css */
+
+/* Set base font size to 10px for easier rem calculations */
+html {
+  font: 62.5% sans-serif;
+}
+
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Global body styles */
+body {
+  font-size: 1.6rem; /* Set base font size */
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+/* Remove underline from links */
+a {
+  text-decoration: none;
+}
+
+/* Medium viewports */
+@media (max-width: 992px) {
+  .sidebar {
+    .nav-text {
+      display: none;
+    }
+  }
+}
+
+/* Small viewports */
+@media (max-width: 576px) {
+  .sidebar {
+    display: none;
+  }
+
+  img.avatar {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  a.download-button {
+    padding: 1rem;
+  }
+
+  div.overlay {
+    font-size: 1rem;
+  }
+}
+
+.vh-20 {
+  height: 20vh;
+}
+
+.h-4rem {
+  height: 4rem;
+}
+
+.red {
+  color: red;
+}
+
+.lightBlue {
+  color: #1da1f2;
+}
+
+.green {
+  color: #1dbb68;
+}
+
+.black {
+  color: black;
+}
+
+/* Background colors */
+.bg-yellow {
+  background-color: #f3ca52;
+}
+
+.bg-blue {
+  background-color: #3178c6;
+}
+
+.bg-red {
+  background-color: #ff5c35;
+}
+
+.bg-purple {
+  background-color: #7952b3;
+}
+
+.bg-green {
+  background-color: #1dbb68;
+}
+
+.bg-orange {
+  background-color: #ff9a00;
+}
+
+.bg-black {
+  background-color: #24292f;
+}
+
+/* borders*/
+.grayBorder {
+  border-top: 1px solid lightgray;
+}
+
+.greenBorder {
+  border-bottom: 3px solid #1dbb68;
+}
+
+/* Sidebar Styling */
+
+/* Navbar */
+.navbar a.nav-link {
+  color: black;
+  padding: 2rem;
+  border-radius: 4px;
+
+  &.active {
+    background-color: #1dbb68;
+    color: white;
+
+    .navbar-icon {
+      color: white;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #38d27d;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+}
+
+/* Custom CSS for vertical progress bar */
+.progress {
+  width: 1rem;
+}
+
+.progress .progress-bar {
+  height: 33.33%;
+  background-color: #1dbb68;
+  transition: height 1s ease;
+}
+
+/* Main section styling */
+.bg-image {
+  background-image: url("assets/images/bgpic.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.section {
+  min-height: 100vh;
+  border-top: solid 2px #efefef;
+}
+
+.section-heading {
+  display: flex;
+  width: 100%;
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+.fa-github,
+.fa-envelope {
+  color: black;
+}
+
+.flag {
+  display: flex;
+  width: 30px;
+  min-height: 20px;
+  margin-left: 1rem !important;
+}
+
+.avatar {
+  margin-top: -7rem;
+  height: 13.5rem;
+  width: 13.5rem;
+  background-color: gray;
+  border-radius: 50%;
+  border: 0.3rem solid white;
+  object-fit: cover;
+}
+
+.name {
+  font-size: calc(1.5rem + 1.5vw);
+}
+
+.download-button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #3178c6;
+  color: white;
+  height: 5rem;
+  font-weight: 700;
+  padding: 1rem 3rem;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #5ca3e8;
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid lightgray;
+  flex: 1;
+}
+
+.skills-header {
+  padding-top: 1.5rem;
+  margin-left: 1.5rem;
+  display: flex;
+}
+
+.skills-heading {
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
+  border-bottom: 3px solid #1dbb68;
+}
+
+.skills-body {
+  height: 100%;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.badge {
+  align-content: center;
+  height: auto;
+  min-height: 4rem;
+  min-width: 4rem;
+  white-space: normal;
+}
+
+.badgeLogo {
+  margin: 1rem;
+  height: 4rem;
+}
+
+.card {
+  border: none;
+  padding-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.project-image-area {
+  &:hover .overlay {
+    opacity: 1;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+/* Project Image Overlay */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #1dbb68;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  border: 0.2rem solid white;
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
